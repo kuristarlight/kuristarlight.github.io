@@ -1,18 +1,18 @@
 ---
 layout: default
-title: Welcome
-show_title: false
+title: Kuristar
+show_title: true
 ---
 
 <div class="hero-section">
     <h1 class="hero-title">Hello, I'm kuristar</h1>
-    <p class="hero-subtitle">Welcome to my personal website</p>
-    <a href="/about/" class="hero-cta">Learn More About Me</a>
+    <p class="hero-subtitle">Welcome Wandering Star</p>
+    <a href="/about/" class="hero-cta">About Kuristar</a>
 </div>
 
 <div class="content">
-    <h2>About This Site</h2>
-    <p>This is my personal space on the web where I share my thoughts, projects, and experiences. I'm passionate about technology, creativity, and continuous learning.</p>
+    <h2>Astrologz Consultations</h2>
+    <p>Greetings traveller, everyone has their own pattern in life, and to know what path you traverse makes it so that you do not fall prey to your own journey, it is only with a map that we get to our destination correctly.</p>
     
     <h3>What You'll Find Here</h3>
     <ul>
