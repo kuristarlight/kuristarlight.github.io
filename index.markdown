@@ -5,8 +5,8 @@ show_title: true
 ---
 
 <div class="hero-section">
-    <h1 class="hero-title">Hello, I'm kuristar</h1>
-    <p class="hero-subtitle">Welcome Wandering Star</p>
+    <h1 class="hero-title">Hello, I'm Kuristar</h1>
+    <p class="hero-subtitle">Welcome, O Wandering Star</p>
     <a href="/about/" class="hero-cta">About Kuristar</a>
 </div>
 
