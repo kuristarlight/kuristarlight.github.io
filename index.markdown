@@ -11,7 +11,7 @@ show_title: true
 </div>
 
 <div class="content">
-    <h2>Astrologz Consultations</h2>
+    <h2>Astrology Consultations</h2>
     <p>Greetings traveller, everyone has their own pattern in life, and to know what path you traverse makes it so that you do not fall prey to your own journey, it is only with a map that we get to our destination correctly.</p>
     
     <h3>What You'll Find Here</h3>
