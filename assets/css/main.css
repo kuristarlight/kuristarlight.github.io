@@ -42,9 +42,8 @@ body {
 
 /* Header */
 .site-header {
-    background-color: var(--background-light);
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
+    background-color: white;
+    padding-top: 1rem;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -66,12 +65,14 @@ body {
 }
 
 /* Navigation */
-.site-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.site-nav {
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--border-color);
+    border-top: 2px solid var(--border-color);
     display: flex;
-    gap: 2rem;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
 }
 
 .site-nav a {
@@ -79,6 +80,7 @@ body {
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.2s ease;
+    padding: 0 1rem;
 }
 
 .site-nav a:hover,
@@ -248,3 +250,29 @@ body {
     white-space: nowrap !important;
     border: 0 !important;
 }
+
+/* start: not ai generated css */
+
+#site-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#site-brand span {
+    font-size: 2rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+#header-logo {
+    height: 4em;
+}
+
+/* end: not ai generated css */

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- SEO and Meta Tags -->
-    <title>{% if page.title %}{{ page.title | escape }} | {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <title>{% if page.title %}{{ site.title | escape }} | {{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <meta name="author" content="{{ site.author | default: 'kuristar' }}">
 
@@ -38,22 +38,35 @@
 
     <!-- Header -->
     <header class="site-header" role="banner">
-        <div class="container">
-            <div class="header-content">
-                <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title | default: 'kuristar' }}</a>
-
-                <nav class="site-nav" role="navigation" aria-label="Main navigation">
-                    <ul>
-                        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="current"{% endif %}>Home</a></li>
-                        <li><a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="current"{% endif %}>About</a></li>
-                        {% if site.posts.size > 0 %}
-                        <li><a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' or layout == 'post' %}class="current"{% endif %}>Blog</a></li>
-                        {% endif %}
-                        <!-- Add more navigation items as needed -->
-                    </ul>
-                </nav>
-            </div>
+        <div id="site-brand">
+            <span>Kuri</span>
+            <img id="header-logo" src="/kuristar.png" />
+            <span>Star</span>
         </div>
+
+        <nav class="site-nav" role="navigation" aria-label="Main navigation">
+            <div>
+                <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="current"{% endif %}>
+                    Home
+                </a>
+            </div>
+            <div>
+                <a href="{{ '/readings/' | relative_url }}" {% if page.url == '/readings/' %}class="current"{% endif %}>
+                    Readings
+                </a>
+            </div>
+            <div>
+                <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' or layout == 'post' %}class="current"{% endif %}>
+                    Writing
+                </a>
+            </div>
+            <div>
+                <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="current"{% endif %}>
+                    About
+                </a>
+            </div>
+            <!-- Add more navigation items as needed -->
+        </nav>
     </header>
 
     <!-- Main Content -->
