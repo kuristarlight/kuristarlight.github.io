@@ -6,3 +6,4 @@ vendor
 .aider.*
 *.env
 CLAUDE.md
+.playwright-mcp

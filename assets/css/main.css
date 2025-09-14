@@ -91,7 +91,6 @@ body {
 /* Main Content */
 .site-main {
     min-height: calc(100vh - 200px);
-    padding: 2rem 0;
 }
 
 .page-content {
@@ -273,6 +272,7 @@ body {
 
 #header-logo {
     height: 4em;
+    padding: 0 0.5em;
 }
 
 /* end: not ai generated css */

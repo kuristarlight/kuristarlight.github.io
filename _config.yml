@@ -55,3 +55,6 @@ exclude:
   - README.md
   - CLAUDE.md
   - AGENTS.md
+  - .playwright-mcp/
+  - .github/
+  - .claude/

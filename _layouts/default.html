@@ -1,95 +1,108 @@
 <!doctype html>
 <html lang="{{ site.lang | default: 'en' }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- SEO and Meta Tags -->
-    <title>{% if page.title %}{{ site.title | escape }} | {{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="author" content="{{ site.author | default: 'kuristar' }}">
+        <!-- SEO and Meta Tags -->
+        <title>
+            {% if page.title %}{{ site.title | escape }} | {{ page.title |
+            escape }}{% else %}{{ site.title | escape }}{% endif %}
+        </title>
+        <meta
+            name="description"
+            content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"
+        />
+        <meta name="author" content="{{ site.author | default: 'kuristar' }}" />
 
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-    <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
-    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-    <meta property="og:url" content="{{ page.url | absolute_url }}">
-    <meta property="og:site_name" content="{{ site.title }}">
+        <!-- Open Graph / Social Media Meta Tags -->
+        <meta
+            property="og:type"
+            content="{% if page.layout == 'post' %}article{% else %}website{% endif %}"
+        />
+        <meta
+            property="og:title"
+            content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}"
+        />
+        <meta
+            property="og:description"
+            content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"
+        />
+        <meta property="og:url" content="{{ page.url | absolute_url }}" />
+        <meta property="og:site_name" content="{{ site.title }}" />
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
-    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary" />
+        <meta
+            name="twitter:title"
+            content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}"
+        />
+        <meta
+            name="twitter:description"
+            content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"
+        />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}">
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/png"
+            href="{{ '/kuristar.png' | relative_url }}"
+        />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+        <!-- CSS -->
+        <link
+            rel="stylesheet"
+            href="{{ '/assets/css/main.css' | relative_url }}"
+        />
 
-    <!-- Additional head content -->
-    {% if page.head %}{{ page.head }}{% endif %}
-</head>
-<body class="{% if page.body_class %}{{ page.body_class }}{% endif %}">
+        <!-- Additional head content -->
+        {% if page.head %}{{ page.head }}{% endif %}
+    </head>
+    <body class="{% if page.body_class %}{{ page.body_class }}{% endif %}">
+        <!-- Skip to main content for accessibility -->
+        <a href="#main-content" class="visually-hidden">Skip to main content</a>
 
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="visually-hidden">Skip to main content</a>
-
-    <!-- Header -->
-    <header class="site-header" role="banner">
-        <div id="site-brand">
-            <span>Kuri</span>
-            <img id="header-logo" src="/kuristar.png" />
-            <span>Star</span>
-        </div>
-
-        <nav class="site-nav" role="navigation" aria-label="Main navigation">
-            <div>
-                <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="current"{% endif %}>
-                    Home
-                </a>
+        <!-- Header -->
+        <header class="site-header" role="banner">
+            <div id="site-brand">
+                <span>Kuri</span>
+                <img id="header-logo" src="/kuristar.png" />
+                <span>Star</span>
             </div>
-            <div>
-                <a href="{{ '/readings/' | relative_url }}" {% if page.url == '/readings/' %}class="current"{% endif %}>
-                    Readings
-                </a>
-            </div>
-            <div>
-                <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' or layout == 'post' %}class="current"{% endif %}>
-                    Writing
-                </a>
-            </div>
-            <div>
-                <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="current"{% endif %}>
-                    About
-                </a>
-            </div>
-            <!-- Add more navigation items as needed -->
-        </nav>
-    </header>
 
-    <!-- Main Content -->
-    <main id="main-content" class="site-main" role="main">
-        <div class="container">
-            {% if page.show_title != false and page.title %}
-            <h1 class="page-title">{{ page.title }}</h1>
-            {% endif %}
+            <nav class="site-nav" role="navigation" aria-label="Main navigation">
+                <div>
+                    <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="current"{% endif %}>
+                        Home
+                    </a>
+                </div>
+                <div>
+                    <a href="{{ '/consultations/' | relative_url }}" {% if page.url == '/consultations/' %}class="current"{% endif %}>
+                        Consultations
+                    </a>
+                </div>
+            </nav>
+        </header>
 
-            <div class="page-content content">
-                {{ content }}
+        <!-- Main Content -->
+        <main id="main-content" class="site-main" role="main">
+            <div class="container">
+                <div class="page-content content">{{ content }}</div>
             </div>
-        </div>
-    </main>
+        </main>
 
-    <!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
-        <div class="container">
-            <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author | default: 'kuristar' }}. All rights reserved.</p>
-        </div>
-    </footer>
+        <!-- Footer -->
+        <footer class="site-footer" role="contentinfo">
+            <div class="container">
+                <p>
+                    &copy; {{ 'now' | date: '%Y' }} {{ site.author | default:
+                    'kuristar' }}. All rights reserved.
+                </p>
+            </div>
+        </footer>
 
-    <!-- Additional scripts -->
-    {% if page.scripts %}{{ page.scripts }}{% endif %}
-</body>
+        <!-- Additional scripts -->
+        {% if page.scripts %}{{ page.scripts }}{% endif %}
+    </body>
 </html>
