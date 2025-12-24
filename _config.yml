@@ -58,3 +58,4 @@ exclude:
   - .playwright-mcp/
   - .github/
   - .claude/
+  - vendor/
