@@ -82,6 +82,21 @@
                         Consultations
                     </a>
                 </div>
+                <div>
+                    <a href="{{ '/testimonials/' | relative_url }}" {% if page.url == '/testimonials/' %}class="current"{% endif %}>
+                        Testimonials
+                    </a>
+                </div>
+                <div>
+                    <a href="{{ '/art/' | relative_url }}" {% if page.url == '/art/' %}class="current"{% endif %}>
+                        Art
+                    </a>
+                </div>
+                <div>
+                    <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="current"{% endif %}>
+                        About
+                    </a>
+                </div>
             </nav>
         </header>
 

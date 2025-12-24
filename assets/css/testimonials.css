@@ -1,0 +1,42 @@
+.testimonials-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.testimonial-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.testimonial-image {
+    flex: 0 0 300px;
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.testimonial-text {
+    flex: 1;
+}
+
+.testimonial-text p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .testimonial-content {
+        flex-direction: column;
+    }
+
+    .testimonial-image {
+        flex: none;
+        width: 100%;
+        max-width: 300px;
+    }
+}
