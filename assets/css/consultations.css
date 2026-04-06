@@ -1,76 +1,82 @@
 .consultations-page {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-.page-header {
+.consultations-header {
     text-align: center;
+    margin-bottom: 2.5rem;
 }
 
-.content-container {
-    display: flex;
-    gap: 2rem;
-    align-items: start;
-}
-
-.services-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.about-section {
-    flex: 2;
-}
-
-.service-card {
-    text-align: center;
-    padding: 2rem 1rem;
-}
-
-.service-card h2 {
-    font-size: 2rem;
+.consultations-header h1 {
+    font-size: 1.3rem;
+    font-weight: bold;
     margin-bottom: 1rem;
 }
 
-.price {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+.consultations-header p {
+    line-height: 1.6;
+}
+
+.consultation-entry {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.consultation-entry:last-child {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.consultation-left {
+    flex: 0 0 250px;
+}
+
+.consultation-left h2 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-bottom: 0.4rem;
+}
+
+.consultation-meta {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
 }
 
 .book-session-btn {
-    border: 2px solid #333;
+    display: inline-block;
+    border: 1px solid #888;
     background: white;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background-color 0.2s ease;
 }
 
 .book-session-btn:hover {
-    background: #333;
-    color: white;
+    background-color: var(--background-light);
 }
 
-.about-section {
-    padding: 2rem;
-}
-
-.about-section h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.about-section p {
-    line-height: 1.6;
-    text-align: justify;
+.consultation-right {
+    flex: 1;
+    line-height: 1.7;
+    padding-top: 0.25rem;
 }
 
 @media (max-width: 768px) {
-    .content-container {
+    .consultation-entry {
         flex-direction: column;
+        gap: 1rem;
+    }
+
+    .consultation-left {
+        flex: none;
+        width: 100%;
     }
 }
