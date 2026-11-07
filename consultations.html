@@ -10,12 +10,17 @@ permalink: /consultations/
     <div class="consultations-header">
         <h1>The Journeys of a Wandering Star</h1>
         <p>The life poses for many questions on its nature. How then do you ground to yourself to your own?</p>
+        <p class="currency-toggle" hidden>
+            Prices in
+            <button type="button" data-currency="php">₱ PHP</button>
+            <button type="button" data-currency="intl">€ EUR</button>
+        </p>
     </div>
 
     <div class="consultation-entry">
         <div class="consultation-left">
             <h2>Natal Attunement</h2>
-            <p class="consultation-meta">1 hour | P2000</p>
+            <p class="consultation-meta">1 hour | <span class="price price-php">₱2,000</span><span class="price-sep"> / </span><span class="price price-intl">€60</span></p>
             <a href="https://calendly.com/kuristar/natal-attunement" target="_blank" class="book-session-btn">Book a Session</a>
         </div>
         <div class="consultation-right">
@@ -26,7 +31,7 @@ permalink: /consultations/
     <div class="consultation-entry">
         <div class="consultation-left">
             <h2>Transits and Timing</h2>
-            <p class="consultation-meta">1 hour | P2000</p>
+            <p class="consultation-meta">1 hour | <span class="price price-php">₱2,000</span><span class="price-sep"> / </span><span class="price price-intl">€60</span></p>
             <a href="https://calendly.com/kuristar/transits-and-timing" target="_blank" class="book-session-btn">Book a Session</a>
         </div>
         <div class="consultation-right">
@@ -37,7 +42,7 @@ permalink: /consultations/
     <div class="consultation-entry">
         <div class="consultation-left">
             <h2>Chart and Course</h2>
-            <p class="consultation-meta">1 hour 30 mins: 2500</p>
+            <p class="consultation-meta">1 hour 30 mins | <span class="price price-php">₱2,500</span><span class="price-sep"> / </span><span class="price price-intl">€70</span></p>
             <a href="https://calendly.com/kuristar/chart-and-course" target="_blank" class="book-session-btn">Book a Session</a>
         </div>
         <div class="consultation-right">
@@ -48,7 +53,7 @@ permalink: /consultations/
     <div class="consultation-entry">
         <div class="consultation-left">
             <h2>A Quick Glimpse</h2>
-            <p class="consultation-meta">30 mins: P1000</p>
+            <p class="consultation-meta">30 mins | <span class="price price-php">₱1,000</span><span class="price-sep"> / </span><span class="price price-intl">€30</span></p>
             <a href="https://calendly.com/kuristar/the-quick-glimpse" target="_blank" class="book-session-btn">Book a Session</a>
         </div>
         <div class="consultation-right">
@@ -56,3 +61,36 @@ permalink: /consultations/
         </div>
     </div>
 </div>
+
+<script>
+(function () {
+    var page = document.querySelector('.consultations-page');
+    var toggle = page.querySelector('.currency-toggle');
+    var stored = null;
+    try { stored = localStorage.getItem('kuristar-currency'); } catch (e) {}
+
+    function detect() {
+        try {
+            var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            if (tz === 'Asia/Manila') return 'php';
+        } catch (e) {}
+        return 'intl';
+    }
+
+    function apply(currency) {
+        page.setAttribute('data-currency', currency);
+        toggle.querySelectorAll('button').forEach(function (b) {
+            b.setAttribute('aria-pressed', b.getAttribute('data-currency') === currency);
+        });
+    }
+
+    toggle.hidden = false;
+    toggle.addEventListener('click', function (e) {
+        var c = e.target.getAttribute('data-currency');
+        if (!c) return;
+        apply(c);
+        try { localStorage.setItem('kuristar-currency', c); } catch (err) {}
+    });
+    apply(stored === 'php' || stored === 'intl' ? stored : detect());
+})();
+</script>
