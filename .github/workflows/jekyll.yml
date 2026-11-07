@@ -29,7 +29,8 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-latest
+    # Pinned: ubuntu-latest moved to 26.04, which setup-ruby v1.299.0 doesn't support
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
