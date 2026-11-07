@@ -81,30 +81,3 @@
     }
 }
 
-/* Localized pricing: without JS both prices show; with JS only the active one */
-.consultations-page[data-currency="php"] .price-intl,
-.consultations-page[data-currency="intl"] .price-php,
-.consultations-page[data-currency] .price-sep {
-    display: none;
-}
-
-.currency-toggle {
-    margin-top: 1rem;
-    font-size: 0.85rem;
-    color: var(--text-light);
-}
-
-.currency-toggle button {
-    border: 1px solid #888;
-    background: white;
-    color: var(--text-color);
-    padding: 0.2rem 0.6rem;
-    margin-left: 0.25rem;
-    font-size: 0.85rem;
-    cursor: pointer;
-}
-
-.currency-toggle button[aria-pressed="true"] {
-    background-color: var(--background-light);
-    font-weight: bold;
-}
